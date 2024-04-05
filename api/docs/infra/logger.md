@@ -29,15 +29,15 @@ Para instanciar o logger em algum lugar da aplicação é necessário usar o pac
 package controllers
 
 import (
- "pet-dex-backend/v2/infra/config"
+ "drawfc24-api/infra/config"
  ... //imports
 )
 
-var logger = config.GetLogger("pet-controller") // Instânciando o logger
+var logger = config.GetLogger("teams-controller") // Instânciando o logger
 
 ... // controller
 
-func (pc *PetController) Create(w http.ResponseWriter, r *http.Request){
+func (pc *TeamsController) Create(w http.ResponseWriter, r *http.Request){
  ...
  logger.Error(err) // Utilizando
  logger.Info("Olha lá")
