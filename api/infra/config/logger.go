@@ -15,7 +15,7 @@ type Logger struct {
 }
 
 func NewLogger(p string) *Logger {
-	writer := io.Writer(os.Stdout)
+	writer := os.Stdout
 	logger := log.New(writer, p, log.Ldate|log.Ltime)
 	return &Logger{
 		debug:   log.New(writer, "DEBUG: ", logger.Flags()),
