@@ -1,27 +1,26 @@
 # Infra
 
-## Sumãrio
+## Summary
 
 1. [Logger](#logger)
-   1. [Funcionalidade](#funcionalidade)
-   2. [Como usar](#como-usar)
+   1. [Functionality](#functionality)
+   2. [How to use](#how-to-use)
 
 ### Logger
 
 path: `infra/config/logger.go`
 
-##### Funcionalidade
+##### Functionality
 
-Ferramenta para registrar mensagens durante a execução do programa.
-Utilidades:
+Tool for logging messages during program execution. Utilities:
 
-1. Registro de eventos
-2. Depuração
-3. Monitoramento
+1. Event logging
+2. Debugging
+3. Monitoring
 
-##### Como usar
+##### How to use
 
-Para instanciar o logger em algum lugar da aplicação é necessário usar o package `config`. Ao topo do arquivo, declare o logger com o escopo do arquivo, vamos considerar um controller:
+To instantiate the logger somewhere in the application, it is necessary to use the `config` package. At the top of the file, declare the logger with file scope, considering a controller:
 
 ```go
 //
@@ -33,20 +32,20 @@ import (
  ... //imports
 )
 
-var logger = config.GetLogger("teams-controller") // Instânciando o logger
+var logger = config.GetLogger("teams-controller") // Instantiating the logger
 
 ... // controller
 
 func (pc *TeamsController) Create(w http.ResponseWriter, r *http.Request){
  ...
- logger.Error(err) // Utilizando
- logger.Info("Olha lá")
+ logger.Error(err) // Using
+ logger.Info("Look there")
 }
 ```
 
-> É nessário passar o contexto o logger vai ser executado pelo parametro da função
+> It is necessary to pass the context the logger will be executed through the function parameter.
 
-O logger tem alguns métodos:
+The logger has some methods:
 
 - Debug - Debugf
 - Info - Infof
